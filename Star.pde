@@ -1,4 +1,4 @@
-class Star //note that this class does NOT extend Floater
+class Star {
   private float x, y;
   private float size;
   private int starColor;
