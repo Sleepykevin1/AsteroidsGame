@@ -1,4 +1,4 @@
-class Bullet {
+class Bullet extends Floater{
   float x, y, speedX, speedY;
   float size = 4;
 
