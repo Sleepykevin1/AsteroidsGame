@@ -1,4 +1,4 @@
-Spaceship playerShip = new Spaceship();
+ Spaceship playerShip = new Spaceship();
 Star[] galaxyStars = new Star[300];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid> ();
 ArrayList <Bullet> bullets = new ArrayList <Bullet> ();
@@ -66,7 +66,6 @@ text("Y Velocity: " + (int) playerShip.getYspeed(), 20, 110);
 
 public void mousePressed() {
 float d = playerShip.getPointDirection();
-println("Ship Direction: " + d); 
 float x = playerShip.getCenterX();
  float y = playerShip.getCenterY(); 
 bullets.add(new Bullet(x, y, d - 5)); 
