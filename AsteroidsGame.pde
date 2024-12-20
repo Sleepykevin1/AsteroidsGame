@@ -40,7 +40,7 @@ public void draw() {
         if (dist(b.x, b.y, (float) a.myCenterX, (float) a.myCenterY) < 20) {
           bullets.remove(j);
           asteroids.remove(i);
-          j = bullets.size(); 
+          j = bullets.size();
         }
       }
     }
