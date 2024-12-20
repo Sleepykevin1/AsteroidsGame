@@ -30,7 +30,6 @@ public void draw() {
     Asteroid a = asteroids.get(i);
     a.move();
     a.show();
-
     if (dist((float) playerShip.getCenterX(), (float) playerShip.getCenterY(), (float) a.myCenterX, (float) a.myCenterY) < 34) {
       playerShip.setXspeed(playerShip.getXspeed() * -0.5);
       playerShip.setYspeed(playerShip.getYspeed() * -0.5);
@@ -41,37 +40,32 @@ public void draw() {
         if (dist(b.x, b.y, (float) a.myCenterX, (float) a.myCenterY) < 20) {
           bullets.remove(j);
           asteroids.remove(i);
-          j = -1; 
+          j = bullets.size(); 
         }
       }
     }
   }
-noStroke();
-fill(0, 150); 
-rect(10, 10, 150, 100); 
 
+  noStroke();
+  fill(0, 150);
+  rect(10, 10, 150, 100);
 
-fill(255);
-textSize(16);
-text("Ship Angle: " + (int) playerShip.getPointDirection(), 20, 30);
-text("X Pos: " + (int) playerShip.getCenterX(), 20, 50);
-text("Y Pos: " + (int) playerShip.getCenterY(), 20, 70);
-text("X Velocity: " + (int) playerShip.getXspeed(), 20, 90);
-text("Y Velocity: " + (int) playerShip.getYspeed(), 20, 110);
-
+  fill(255);
+  textSize(16);
+  text("Ship Angle: " + (int) playerShip.getPointDirection(), 20, 30);
+  text("X Pos: " + (int) playerShip.getCenterX(), 20, 50);
+  text("Y Pos: " + (int) playerShip.getCenterY(), 20, 70);
+  text("X Velocity: " + (int) playerShip.getXspeed(), 20, 90);
+  text("Y Velocity: " + (int) playerShip.getYspeed(), 20, 110);
 }
 
-
-
-
 public void mousePressed() {
-float d = playerShip.getPointDirection();
-float x = playerShip.getCenterX();
- float y = playerShip.getCenterY(); 
-bullets.add(new Bullet(x, y, d - 5)); 
-bullets.add(new Bullet(x, y, d)); 
-bullets.add(new Bullet(x, y, d + 5));
-println("Bullet created at:", x, y, "Direction:", direction);
+  float d = (float) playerShip.getPointDirection();
+  float x = (float) playerShip.getCenterX();
+  float y = (float) playerShip.getCenterY();
+  bullets.add(new Bullet(x, y, d - 5));
+  bullets.add(new Bullet(x, y, d));
+  bullets.add(new Bullet(x, y, d + 5));
 }
 
 public void keyPressed() {
