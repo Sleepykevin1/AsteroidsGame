@@ -72,6 +72,7 @@ float x = playerShip.getCenterX();
 bullets.add(new Bullet(x, y, d - 5)); 
 bullets.add(new Bullet(x, y, d)); 
 bullets.add(new Bullet(x, y, d + 5));
+println("Bullet created at:", x, y, "Direction:", direction);
 }
 
 public void keyPressed() {
